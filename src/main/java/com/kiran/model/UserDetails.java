@@ -4,6 +4,9 @@ import javax.persistence.*;
 import lombok.Setter;
 import lombok.Getter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Setter
 @Getter
@@ -13,6 +16,10 @@ public class UserDetails {
 
 	private String name;
     
-    @Embedded
-    private Address address;
+    //@Embedded
+    //private Address address;
+
+    @ElementCollection()
+    @JoinTable(name = "user_address")
+    private Set<Address> addresses = new HashSet<>();
 }

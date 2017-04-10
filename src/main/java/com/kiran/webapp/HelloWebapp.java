@@ -37,7 +37,8 @@ public class HelloWebapp {
         addr1.setStreet("street");
         addr1.setPinCode("pincode");
         
-        ud.setAddress(addr1);
+        //ud.setAddress(addr1);
+		ud.getAddresses().add(addr1);
 
 		try {
 
